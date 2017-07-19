@@ -40,9 +40,9 @@ class GoogleProvider(BaseProvider):
     MIN_TTL = 60
     TIMEOUT = 30
 
-    def __init__(self, record, project_id, email, token, *args, **kwargs):
+    def __init__(self, record, project_id, *args, **kwargs):
         self.log = getLogger('GoogleProvider[{}]'.format(id))
-        self.log.debug('__init__: id=%s, email=%s, token=***', id, email)
+        # self.log.debug('__init__: id=%s, email=%s, token=***', id, email)
         super(GoogleProvider, self).__init__(id, *args, **kwargs)
 
         self.credentials = GoogleCredentials.get_application_default()
